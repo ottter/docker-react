@@ -8,14 +8,14 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /home/james/udemy/app/node_modules
-      - .:/home/james/udemy/app        
+      - /app/node_modules
+      - .:/app        
   tests:
     stdin_open: true
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - /home/james/udemy/app/node_modules
-      - .:/home/james/udemy/app
+      - /app/node_modules
+      - .:/app
     command: ["npm", "run", "test"]

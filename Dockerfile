@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /home/james/udemy/app
+WORKDIR /app
 
 COPY package*.json ./
 RUN npm install -g npm@7.6.0
@@ -9,4 +9,4 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-COPY --from=0 /home/james/udemy/app/build /usr/share/nginx/html
+COPY --from=0 /app/build /usr/share/nginx/html

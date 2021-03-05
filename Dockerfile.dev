@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /home/james/udemy/app
+WORKDIR /app
 
 # Global
 RUN npm install -g npm@latest
