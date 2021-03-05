@@ -1,0 +1,10 @@
+FROM node:alpine
+
+WORKDIR /home/james/udemy/app
+
+COPY package*.json ./
+RUN npm install -g npm@7.6.0
+RUN npm install -g react-scripts
+COPY . .
+
+CMD ["npm", "run", "start"]
