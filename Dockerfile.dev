@@ -2,10 +2,13 @@ FROM node:alpine
 
 WORKDIR /home/james/udemy/app
 
+# Global
+RUN npm install -g npm@latest
+
+# Local
 COPY package*.json ./
-RUN npm install -g npm@7.6.0
-RUN npm install -g react-scripts
-RUN npm install -g @testing-library/jest-dom
+RUN npm install
+
 COPY . .
 
 CMD ["npm", "run", "start"]
