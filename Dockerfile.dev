@@ -5,6 +5,7 @@ WORKDIR /home/james/udemy/app
 COPY package*.json ./
 RUN npm install -g npm@7.6.0
 RUN npm install -g react-scripts
+RUN npm install -g @testing-library/jest-dom
 COPY . .
 
 CMD ["npm", "run", "start"]
